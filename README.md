@@ -1,3 +1,4 @@
+This repository is contributed by https://github.com/lmzintgraf/gp_pref_elicit. Luisa's papers and code are used to develop further in the problem of Multi-Objective Optimization. Her research involves solving the problem with Gaussian Process with Expected Improvement (non-parametric approach) as an acquisition function whereas I focus on Bayesian Logistic Regression with Thompson Sampling (parametric approach) as an acquisition function. Thus, I first compare Gausiaan Process (GP) with Expected Imporvement (EI) on a synthetic pareto coverage set (PCS) and GP with Thompson Sampling (TS). Then I aim to replace the GP with Bayesian Logistic Regression (BLR)to further compare the two approaches. To run my code, navigate to the ```webInterface``` folder and run the ```BLR-TS.ipynb``` file.
 <<<<<<< HEAD
 This is the code for the paper
 
