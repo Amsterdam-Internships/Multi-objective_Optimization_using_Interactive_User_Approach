@@ -15,7 +15,7 @@ class DatasetPairwise:
         """
         self.num_objectives = num_objectives
         self.datapoints = np.empty((0, self.num_objectives))
-        self.comparisons = np.empty((0, 2), dtype=np.int)
+        self.comparisons = np.empty((0, 2), dtype=int)
 
     def add_single_comparison(self, winner, loser):
         """

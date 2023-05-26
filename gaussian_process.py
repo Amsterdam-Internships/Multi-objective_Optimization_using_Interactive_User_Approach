@@ -12,6 +12,7 @@ for more detail on how we compute the GP updates.
 
 @author: Luisa M Zintgraf (2017, Vrije Universiteit Brussel)
 """
+
 import numpy as np
 from numpy.random import RandomState
 from scipy.stats import norm
