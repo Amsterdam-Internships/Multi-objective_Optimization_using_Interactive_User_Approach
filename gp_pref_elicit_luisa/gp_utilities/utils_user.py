@@ -11,7 +11,7 @@ from scipy import special
 from sklearn.cluster import KMeans
 import sys
 sys.path.insert(0, '..')
-from gp_utilities import utils_data, utils_ccs
+from gp_pref_elicit_luisa.gp_utilities import utils_data, utils_ccs
 
 
 class UserPreference:

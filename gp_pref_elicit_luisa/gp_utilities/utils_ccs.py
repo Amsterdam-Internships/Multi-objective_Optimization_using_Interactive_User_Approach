@@ -5,7 +5,7 @@ import os
 import numpy as np
 from scipy.spatial import ConvexHull
 import scipy
-from pymodem import value, pruners
+from gp_pref_elicit_luisa.pymodem import value, pruners
 
 ROOT = os.path.dirname(__file__)
 

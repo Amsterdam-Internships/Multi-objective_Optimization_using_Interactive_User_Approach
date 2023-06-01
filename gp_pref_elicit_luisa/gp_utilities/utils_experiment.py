@@ -8,8 +8,8 @@ sys.path.insert(0, '..')
 from gp_utilities import utils_parameters, utils_ccs
 from gp_utilities.utils_user import UserPreference
 import acquisition_function
-from dataset import DatasetPairwise
-from gaussian_process import GPPairwise
+from gp_pref_elicit_luisa.dataset import DatasetPairwise
+from gp_pref_elicit_luisa.gaussian_process import GPPairwise
 
 # get the folder where we store the results
 PATH_RESULTS_DIR = os.path.join('../experiments/results')

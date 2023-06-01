@@ -8,7 +8,7 @@ import sys
 import time
 sys.path.insert(0, '../')
 sys.path.insert(0, '../../')
-from dataset import DatasetPairwise
+from gp_pref_elicit_luisa.dataset import DatasetPairwise
 
 
 # -- data paths --

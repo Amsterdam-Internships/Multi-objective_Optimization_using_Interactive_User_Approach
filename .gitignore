@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # the usual
 .DS_Store
 *.pyc
@@ -17,19 +16,3 @@ results
 *.npy
 *.p
 bootstrap.css
-=======
-# env / packaging
-env/
-wheels/
-
-# bytecode stuffs
-__pycache__/
-*.py[cod]
-
-# jupyter
-.ipynb_checkpoints
-*/.ipynb_checkpoints/*
-
-# other
-.idea/*
->>>>>>> origin/master

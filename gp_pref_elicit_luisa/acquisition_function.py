@@ -6,7 +6,7 @@ import numpy as np
 from scipy.stats import norm
 import sys
 sys.path.insert(0, '..')
-from gp_utilities.utils_data import array_in_matrix
+from gp_pref_elicit_luisa.gp_utilities.utils_data import array_in_matrix
 
 
 class DiscreteAcquirer:

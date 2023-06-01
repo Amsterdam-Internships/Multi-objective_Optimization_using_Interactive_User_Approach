@@ -4,7 +4,7 @@
 import numpy as np
 import sys
 sys.path.insert(0, '..')
-from gp_utilities import utils_data as utl_data
+from gp_pref_elicit_luisa.gp_utilities import utils_data as utl_data
 
 
 class DatasetPairwise:

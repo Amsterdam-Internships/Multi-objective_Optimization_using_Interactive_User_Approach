@@ -9,7 +9,7 @@ import sys
 sys.path.insert(0, '../')
 from python_backend import specs_jobs, utils_jobs, data_jobs, utils_users
 sys.path.insert(0, '../../')
-from gaussian_process import GPPairwise
+from gp_pref_elicit_luisa.gaussian_process import GPPairwise
 from acquisition_function import DiscreteAcquirer
 
 bp_pairwise_jobs = Blueprint('bp_pairwise_jobs', __name__)
