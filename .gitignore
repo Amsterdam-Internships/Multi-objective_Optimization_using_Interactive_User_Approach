@@ -5,13 +5,7 @@ __pycache__
 .idea
 
 # folders
-experiments/ccs_cache
-experiments/pcs_grid_cache
-experiments/result_plots
-results
+
 
 # other files
-.ipynb_checkpoints
-*.npy
-*.p
-bootstrap.css
+
