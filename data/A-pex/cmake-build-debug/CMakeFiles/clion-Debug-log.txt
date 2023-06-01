@@ -1,0 +1,116 @@
+"D:\Downloads\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/Downloads/CLion 2022.3.2/bin/ninja/win/x64/ninja.exe" -DBOOST_ROOT=D:\Downloads\boost_1_81_0\boost_1_81_0-DBOOST_LIBRARYDIR=D:\Downloads\boost_1_81_0\boost_1_81_0\stage\lib -G Ninja -S D:\modules\thesis\data\A-pex -B D:\modules\thesis\data\A-pex\cmake-build-debug
+CMake Deprecation Warning at CMakeLists.txt:4 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Warning at D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1384 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
+Call Stack (most recent call first):
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1507 (_Boost_COMPONENT_DEPENDENCIES)
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:2118 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1384 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
+Call Stack (most recent call first):
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1507 (_Boost_COMPONENT_DEPENDENCIES)
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:2118 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1384 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
+Call Stack (most recent call first):
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1507 (_Boost_COMPONENT_DEPENDENCIES)
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:2118 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1384 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
+Call Stack (most recent call first):
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1507 (_Boost_COMPONENT_DEPENDENCIES)
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:2118 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1384 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
+Call Stack (most recent call first):
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1507 (_Boost_COMPONENT_DEPENDENCIES)
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:2118 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1384 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
+Call Stack (most recent call first):
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1507 (_Boost_COMPONENT_DEPENDENCIES)
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:2118 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1384 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
+Call Stack (most recent call first):
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1507 (_Boost_COMPONENT_DEPENDENCIES)
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:2118 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1384 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
+Call Stack (most recent call first):
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1507 (_Boost_COMPONENT_DEPENDENCIES)
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:2118 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning at D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1384 (message):
+  New Boost version may have incorrect or missing dependencies and imported
+  targets
+Call Stack (most recent call first):
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:1507 (_Boost_COMPONENT_DEPENDENCIES)
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:2118 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Error at D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake:230 (message):
+  Could NOT find Boost (missing: program_options log thread filesystem
+  system) (found version "1.81.0")
+Call Stack (most recent call first):
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake:594 (_FPHSA_FAILURE_MESSAGE)
+  D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:2376 (find_package_handle_standard_args)
+  CMakeLists.txt:18 (find_package)
+
+
+CMake Warning (dev) in D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake:
+  Policy CMP0011 is not set: Included scripts do automatic cmake_policy PUSH
+  and POP.  Run "cmake --help-policy CMP0011" for policy details.  Use the
+  cmake_policy command to set the policy and suppress this warning.
+
+  The included script
+
+    D:/Downloads/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/FindBoost.cmake
+
+  affects policy settings.  CMake is implying the NO_POLICY_SCOPE option for
+  compatibility, so the effects are applied to the including context.
+Call Stack (most recent call first):
+  CMakeLists.txt:18 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Configuring incomplete, errors occurred!
+See also "D:/modules/thesis/data/A-pex/cmake-build-debug/CMakeFiles/CMakeOutput.log".

@@ -1,0 +1,11 @@
+{
+    "C_Cpp.files.exclude": {
+        
+        "**/.vscode": true,
+        "**/.vs": true
+    },
+    "files.associations": {
+        "*.txt": "python",
+        "iostream": "cpp"
+    }
+}
