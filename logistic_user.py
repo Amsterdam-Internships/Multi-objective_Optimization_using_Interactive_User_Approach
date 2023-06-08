@@ -31,21 +31,24 @@ class LogisticDecisionMaker:
                 self.weights[j] = self.weights[j] / sum_w
                 # print("DM LINWEIGHTS: ", self.weights)
 
-    def ground_utility(self, vector):
+    def ground_utility(self, vector): # gives a ground truth utility for the user
         return self.user_pref.get_preference(vector, add_noise=True)
 
-    def features(v):
+    def features(self, v): # converts input features to feature vectors and gives an array of feature vectors
         mins = []
         maxs = []
-        for i in range(len(v)):
-            for v_j in v[i+1]:
+        for i in range(len(v)-1):
+            for v_j in np.asarray(v[i+1:]).tolist():
                 mins.append(min(v[i], v_j))
                 maxs.append(max(v[i], v_j))
         result = list(v) + maxs + mins
         return np.array(result)
 
     def log_comparison(self, vector1, vector2, comp): # just logs the comparison
-        diff_vector = self.features(vector1) - self.features(vector2)
+        v_1 = self.features(vector1)
+        v_2 = self.features(vector2)
+        # diff_vector = self.features(vector1) - self.features(vector2)
+        diff_vector = v_1 - v_2
         res = 0.0
         if comp:
             res = 1.0
@@ -58,9 +61,10 @@ class LogisticDecisionMaker:
         comp = (scalar1 >= scalar2)
         if log:
             self.log_comparison(vector1, vector2, comp)
-        return comp
+        return vector1 if comp else vector2
 
-    def current_map(self): # 
+    def current_map(self): # gives the output for BLR which is the mean and the covariance matrix
+        # TODO: H_prior should be made as a matrix (not imp)
         if len(self.previous_outcomes) > 0:
             # try :
             # clf = linear_model.LogisticRegression(C=1e5)
@@ -85,19 +89,21 @@ class LogisticDecisionMaker:
                 result[i] = result[i] / float(len(self.weights))
             return result, None
         
-    def sample_model(self):
+    def sample_model(self): # generates sampling from a multivariate gaussian distribution
         w, H = self.current_map()
         norm_dist = multivariate_normal(mean=w, cov=H, allow_singular=False, seed=None)
         w_s = norm_dist.rvs()
         return w_s
     
-    def thompson_sampled_point(self, dataset):
+    def thompson_sampled_point(self, dataset): # gets current best point from BLR according to thompson sampling
         dataset_features = [self.features(v) for v in dataset]
         w_sample = self.sample_model()
         utilities = [np.inner(w_sample, v) for v in dataset_features]
         utilities_max = np.argmax(utilities)
         current_best = dataset[utilities_max]
         return current_best
+    
+    # TODO: method for excluding points 
 
         
         
