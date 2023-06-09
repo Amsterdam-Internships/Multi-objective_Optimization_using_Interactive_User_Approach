@@ -105,6 +105,16 @@ class LogisticDecisionMaker:
     
     # TODO: method for excluding points 
 
+    def is_explore(self, point, explored_points):
+       return point in explored_points
+    
+    def get_next_point_TS(self, dataset, explored_points):
+       next_point_TS = self.thompson_sampled_point(dataset)
+       while self.is_explore(next_point_TS, explored_points):
+           next_point_TS = self.thompson_sampled_point(dataset)
+       return next_point_TS
+        
+
         
         
 
