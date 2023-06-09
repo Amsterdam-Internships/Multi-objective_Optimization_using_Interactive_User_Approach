@@ -112,8 +112,7 @@ class LogisticDecisionMaker:
        next_point_TS = self.thompson_sampled_point(dataset)
        while self.is_explore(next_point_TS, explored_points):
            next_point_TS = self.thompson_sampled_point(dataset)
-       return next_point_TS
-        
+       return next_point_TS       
 
         
         
