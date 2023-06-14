@@ -98,21 +98,24 @@ class LogisticDecisionMaker:
     def thompson_sampled_point(self, dataset): # gets current best point from BLR according to thompson sampling
         dataset_features = [self.features(v) for v in dataset]
         w_sample = self.sample_model()
-        utilities = [np.inner(w_sample, v) for v in dataset_features]
+        exclude_points_ts = self.exclude_points(dataset)
+        dataset_exclude_points = [v for v in dataset_features if not any(np.array_equal(v, exclude) for exclude in exclude_points_ts)]
+        utilities = [np.inner(w_sample, v) for v in dataset_exclude_points]
         utilities_max = np.argmax(utilities)
-        current_best = dataset[utilities_max]
+        current_best_index = utilities_max
+        current_best = dataset[current_best_index]
         return current_best
     
     # TODO: method for excluding points 
 
-    def is_explore(self, point, explored_points):
-       return point in explored_points
-    
-    def get_next_point_TS(self, dataset, explored_points):
-       next_point_TS = self.thompson_sampled_point(dataset)
-       while self.is_explore(next_point_TS, explored_points):
-           next_point_TS = self.thompson_sampled_point(dataset)
-       return next_point_TS       
+    def exclude_points(self, dataset):
+        current_best = dataset[-1]
+        exclude_point = [current_best]
+        for comparison, result in zip(self.previous_comparisons, self.previous_outcomes):
+            if np.array_equal(current_best, comparison):
+                exclude_point.append(comparison[1] if result == 1 else comparison[0])
+        # return [self.features(v) for v in exclude_point]
+        return exclude_point
 
         
         
