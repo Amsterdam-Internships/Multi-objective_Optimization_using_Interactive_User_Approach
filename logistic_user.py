@@ -99,6 +99,7 @@ class LogisticDecisionMaker:
         dataset_features = [self.features(v) for v in dataset]
         w_sample = self.sample_model()
         exclude_points_ts = self.exclude_points(dataset)
+        # print('excluded points: ', exclude_points_ts)
         dataset_exclude_points = [v for v in dataset_features if not any(np.array_equal(v, exclude) for exclude in exclude_points_ts)]
         utilities = [np.inner(w_sample, v) for v in dataset_exclude_points]
         utilities_max = np.argmax(utilities)
@@ -108,16 +109,31 @@ class LogisticDecisionMaker:
     
     # TODO: method for excluding points 
 
+    # def exclude_points(self, dataset):
+    #     current_best = dataset[-1]
+    #     exclude_points = [current_best]
+    #     for comparison, result in zip(self.previous_comparisons, self.previous_outcomes):
+    #         if np.array_equal(current_best, comparison):
+    #             excluded_point = comparison[1] if result == 1 else comparison[0]
+    #             if excluded_point.tolist() not in exclude_points:
+    #                 exclude_points.append(excluded_point)
+    #             # exclude_points.append(comparison[1] if result == 1 else comparison[0])
+    #     # return [self.features(v) for v in exclude_point]
+    #     return exclude_points
+
     def exclude_points(self, dataset):
         current_best = dataset[-1]
         exclude_point = [current_best]
-        for comparison, result in zip(self.previous_comparisons, self.previous_outcomes):
-            if np.array_equal(current_best, comparison):
-                exclude_point.append(comparison[1] if result == 1 else comparison[0])
-        # return [self.features(v) for v in exclude_point]
-        return exclude_point
-
-        
+        for comparison in self.previous_comparisons:
+            if np.array_equal(current_best, comparison[0]):
+                excluded_the_point = comparison[1]
+                if not any(np.array_equal(excluded_the_point, point_to_exclude) for point_to_exclude in exclude_point):
+                    exclude_point.append(excluded_the_point)
+            elif np.array_equal(current_best, comparison[1]):
+                excluded_the_point = comparison[0]
+                if not any(np.array_equal(excluded_the_point, point_to_exclude) for point_to_exclude in exclude_point):
+                    exclude_point.append(excluded_the_point)
+        return exclude_point       
         
 
         
