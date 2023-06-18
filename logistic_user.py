@@ -32,7 +32,7 @@ class LogisticDecisionMaker:
                 # print("DM LINWEIGHTS: ", self.weights)
 
     def ground_utility(self, vector): # gives a ground truth utility for the user
-        return self.user_pref.get_preference(vector, add_noise=True)
+        return self.user_pref.get_preference(vector, add_noise=False)
 
     def features(self, v): # converts input features to feature vectors and gives an array of feature vectors
         mins = []
@@ -95,47 +95,64 @@ class LogisticDecisionMaker:
         w_s = norm_dist.rvs()
         return w_s
     
-    def thompson_sampled_point(self, dataset, exclude_points_ts): # gets current best point from BLR according to thompson sampling
-        # 
+    # def thompson_sampled_point(self, dataset): # gets current best point from BLR according to thompson sampling
+    #     exclude_points_ts = []
+    #     dataset_features = [self.features(v) for v in dataset]
+    #     w_sample = self.sample_model()
+    #     # exclude_points_ts = self.exclude_points(dataset)
+    #     exclude_points_ts.append(self.exclude_points(dataset))
+    #     # print('excluded points: ', exclude_points_ts)
+    #     dataset_exclude_points = [v for v in dataset_features if not any(np.array_equal(v, exclude) for exclude in exclude_points_ts)]
+    #     utilities = [np.inner(w_sample, v) for v in dataset_exclude_points]
+    #     utilities_max = np.argmax(utilities)
+    #     current_best_index = utilities_max
+    #     current_best = dataset[current_best_index]
+    #     return current_best
+    
+    def thompson_sampled_point(self, dataset): # gets current best point from BLR according to thompson sampling
         dataset_features = [self.features(v) for v in dataset]
         w_sample = self.sample_model()
-        # exclude_points_ts = self.exclude_points(dataset)
-        exclude_points_ts.append(self.exclude_points(dataset))
-        print('excluded points: ', exclude_points_ts)
-        dataset_exclude_points = [v for v in dataset_features if not any(np.array_equal(v, exclude) for exclude in exclude_points_ts)]
-        utilities = [np.inner(w_sample, v) for v in dataset_exclude_points]
+        utilities = [np.inner(w_sample, v) for v in dataset_features]
         utilities_max = np.argmax(utilities)
-        current_best_index = utilities_max
-        current_best = dataset[current_best_index]
-        return current_best, exclude_points_ts
-    
+        current_best = dataset[utilities_max]
+        return current_best
+
     # TODO: method for excluding points 
 
-    # def exclude_points(self, dataset):
-    #     current_best = dataset[-1]
-    #     exclude_points = [current_best]
-    #     for comparison, result in zip(self.previous_comparisons, self.previous_outcomes):
-    #         if np.array_equal(current_best, comparison):
-    #             excluded_point = comparison[1] if result == 1 else comparison[0]
-    #             if excluded_point.tolist() not in exclude_points:
-    #                 exclude_points.append(excluded_point)
-    #             # exclude_points.append(comparison[1] if result == 1 else comparison[0])
-    #     # return [self.features(v) for v in exclude_point]
-    #     return exclude_points
-
     def exclude_points(self, dataset):
-        current_point = dataset[-1]
-        exclude_point = [current_point]
-        for comparison in self.previous_comparisons:
-            if np.array_equal(current_point, comparison[0]):
-                excluded_the_point = comparison[1]
-                if not any(np.array_equal(excluded_the_point, point_to_exclude) for point_to_exclude in exclude_point):
-                    exclude_point.append(excluded_the_point)
-            elif np.array_equal(current_point, comparison[1]):
-                excluded_the_point = comparison[0]
-                if not any(np.array_equal(excluded_the_point, point_to_exclude) for point_to_exclude in exclude_point):
-                    exclude_point.append(excluded_the_point)
-        return exclude_point       
+        current_best = dataset[-1]
+        # print('current best: ', current_best)
+        exclude_points = current_best
+        # print('exclude points: ', exclude_points)
+        for comparison, result in zip(self.previous_comparisons, self.previous_outcomes):
+            if np.all(np.array_equal(current_best, comparison)):
+                excluded_point = comparison[1] if result == 1 else comparison[0]
+                # print('excluded point: ', excluded_point)
+                if excluded_point not in exclude_points:
+                    exclude_points.append(excluded_point)
+                    
+                # exclude_points.append(comparison[1] if result == 1 else comparison[0])
+        # return [self.features(v) for v in exclude_point]
+        return exclude_points
+
+    # def exclude_points(self, dataset):
+    #     current_point = [dataset[-1]]
+    #     print('current point: ', current_point)
+    #     exclude_point = current_point
+    #     print('exclude points: ', exclude_point)
+    #     for comparison in self.previous_comparisons:
+    #         if np.array_equal(current_point, comparison):
+    #             excluded_the_point = comparison
+    #             print('excluded point 1st if: ', excluded_the_point)
+            #     if not any(np.array_equal(excluded_the_point, point_to_exclude) for point_to_exclude in exclude_point):
+            #         exclude_point.append(excluded_the_point)
+            #         print('exclude point: ', exclude_point)
+            # elif np.array_equal(current_point, comparison[1]):
+            #     excluded_the_point = comparison[0]
+            #     print('excluded point 1st if: ', excluded_the_point)
+            #     if not any(np.array_equal(excluded_the_point, point_to_exclude) for point_to_exclude in exclude_point):
+            #         exclude_point.append(excluded_the_point)
+        # return excluded_the_point       
         
 
         

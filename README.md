@@ -5,4 +5,5 @@ What to run:
 2. To run the experiments for Thompson Sampling, run the ```run_GP-TS.py``` file in the ```experiments``` folder change the ```num_iter``` to the desired number of iterations the notebook should be run.
 3. To run Gaussian Processes with Expected Improvement or Thompson Sampling using a different dataset with more or less objectives and datapoints, modify the path to ```synthetic_pcs``` in ```GP_EI.ipynb``` and ```GP_TS.ipynb``` files respectively. Please also change the ```output_regret_csv```, ```output_csv``` and ```objectives``` variables accordingly. 
 4. To generate synthetic Pareto Coverage Sets with different objectives and datapoints, run the ```pointset.py``` file in the ```synthetic_pcs_sets``` folder and modify the ```numobjectives``` and ```numpoints``` variables.
-
+5. To generate graphs for the output of Expected Improvement and/or Thompson Sampling, run file ```visualizations.py``` in the ```experiments``` folder. This will generate graphs for all csv files present in the ```experiments``` folder.
+6. To generate graphs for the regret of Expected Improvement and/or Thompson Sampling at each step of the loop, run file ```visualizations-regret.py``` in the ```experiments``` folder. This file will generate graphs for all the csv files present in the ```regret-csvs``` folder under the ```experiments``` folder.
