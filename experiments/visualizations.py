@@ -35,7 +35,7 @@ for csvs in csv_files:
     # number of observations in each bin
     plt.xlabel('Number of Queries')
     plt.ylabel('Count')
-    plt.title('Distribution of Number of Queries as a function of the Regret')
+    plt.title('Distribution of Number of Queries until Convergence')
     # plt.show()
 
 

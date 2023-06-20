@@ -10,12 +10,15 @@ from scipy.stats import multivariate_normal
 
 
 class LogisticDecisionMaker:
-    def __init__(self, no_obj, num_features, noise=0.0, predefined_weights=None, defer_comp_to=None):
-        self.weights = np.zeros(num_features)
+    def __init__(self, no_obj, noise=0.0, predefined_weights=None, defer_comp_to=None):
+        
         self.irrationality_sigma = noise
         self.previous_comparisons = []
         self.previous_outcomes = []
         self.user_pref = gp_utils_users.UserPreference(num_objectives=no_obj, std_noise=0.1)
+        feature_vec = self.features(np.zeros(no_obj))
+        self.num_features = len(feature_vec)
+        self.weights = np.zeros(self.num_features)
         self.defer_to_DM = defer_comp_to
         if predefined_weights is not None:
             self.weights = predefined_weights
@@ -23,11 +26,11 @@ class LogisticDecisionMaker:
             new_seed = math.floor(random.random() * 1000)
             random.seed(new_seed)
             sum_w = 0.0
-            for j in range(num_features):
+            for j in range(self.num_features):
                 rnd = random.random()
                 self.weights[j] = rnd
                 sum_w = sum_w + rnd
-            for j in range(num_features):
+            for j in range(self.num_features):
                 self.weights[j] = self.weights[j] / sum_w
                 # print("DM LINWEIGHTS: ", self.weights)
 
