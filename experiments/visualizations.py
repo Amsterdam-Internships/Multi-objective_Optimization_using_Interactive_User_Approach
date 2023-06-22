@@ -30,12 +30,14 @@ for csvs in csv_files:
     # plt.grid(True)
 
     df = pd.DataFrame({'Number of Queries': num_queries, 'Regret': regret})
-    sns.histplot(data=df, x='Number of Queries', bins=50, stat='count', alpha=0.8)
+    sns.histplot(data=df, x='Number of Queries', bins=20, stat='count')
     # stat is the aggregate statistic to compute in each bin. Stat is chosen to be count to show the 
     # number of observations in each bin
     plt.xlabel('Number of Queries')
     plt.ylabel('Count')
     plt.title('Distribution of Number of Queries until Convergence')
+    plt.xlim(-10, 290)
+    plt.ylim(0, 40)
     # plt.show()
 
 
